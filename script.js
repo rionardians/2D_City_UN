@@ -92,7 +92,7 @@ function openYoutube(targetChannel) {
 
     var el = document.createElement("div");
     el.id = "youtube-embed";
-    el.innerHTML = "<iframe width='400' height='300' src='https://www.youtube.com/embed/live_stream?channel=" + targetChannel + "' frameborder='0' allowfullscreen></iframe>";
+    el.innerHTML = "<iframe width='400' height='300' src='https://www.youtube.com/embed/live_stream?channel=" + targetChannel + "&autoplay=1&mute=1&enablejsapi=1' frameborder='0'></iframe>";
     document.getElementById("div-embed").appendChild(el);
 
     dragElement(document.getElementById("div-embed"));
