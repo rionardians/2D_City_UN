@@ -67,7 +67,7 @@ function callUnityResize(objName, objCallback) {
     ourInstance.Module.SendMessage(objName, objCallback, container.getAttribute("isportrait").toLowerCase());
 }
 
-function openTwitch(targetChannel) {
+function openTwitch(targetChannel, audioOnly) {
     var options = {
         width: 400,
         height: 300,
@@ -78,24 +78,45 @@ function openTwitch(targetChannel) {
     var player = new Twitch.Player("div-embed", options);
     player.setVolume(0.5);
 
-    document.getElementById("div-embed").style.display = "block";
-    dragElement(document.getElementById("div-embed"));
+	if(audioOnly == "False"){
+		document.getElementById("div-embed").style.display = "block";
+		dragElement(document.getElementById("div-embed"));
+	}
 }
 
 function closeEmbed() {
     document.getElementById("div-embed").style.display = "none";
-    document.getElementById("div-embed").innerHTML = "<div id='div-embed-header'>Click here to move</div>";
+    document.getElementById("div-embed").innerHTML = "<div id='div-embed-header'>Click here to move</div><div id='player'></div>";
 }
 
-function openYoutube(targetChannel) {
-    document.getElementById("div-embed").style.display = "block";
+function openYoutube(targetChannel, audioOnly) {
+	var player = new YT.Player('player', {
+          width: '400',
+          height: '300',
+          videoId: targetChannel,
+          playerVars: {
+            'playsinline': 1
+          },
+          events: {
+            'onReady': onPlayerReady
+          }
+        });
+		
+	if(audioOnly == "False"){
+		document.getElementById("div-embed").style.display = "block";
+		dragElement(document.getElementById("div-embed"));
+	}
 
-    var el = document.createElement("div");
+    /*
+	var el = document.createElement("div");
     el.id = "youtube-embed";
     el.innerHTML = "<iframe width='400' height='300' src='https://www.youtube.com/embed/live_stream?channel=" + targetChannel + "&autoplay=1&mute=1&enablejsapi=1' frameborder='0'></iframe>";
     document.getElementById("div-embed").appendChild(el);
+    */
+}
 
-    dragElement(document.getElementById("div-embed"));
+function onPlayerReady(event) {
+	event.target.playVideo();
 }
 
 function dragElement(elmnt) {
