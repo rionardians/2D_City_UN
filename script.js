@@ -8,12 +8,12 @@ var container = canvas.parentElement;
 var loadingBar = document.querySelector("#unity-loading");
 var loadingText = document.querySelector("#unity-loading-text");
 var config = {
-    dataUrl: "Build/Near.data",
-    frameworkUrl: "Build/Near.framework.js",
-    codeUrl: "Build/Near.wasm",
+    dataUrl: "Build/Metamask.data",
+    frameworkUrl: "Build/Metamask.framework.js",
+    codeUrl: "Build/Metamask.wasm",
     streamingAssetsUrl: "StreamingAssets",
     companyName: "RealityChain",
-    productName: "2dverse: Paras World",
+    productName: "2dverse: UniqueOne World",
     productVersion: "0.9.4.M",
 };
 container.setAttribute("isportrait", false);
