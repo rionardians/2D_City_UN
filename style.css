@@ -60,3 +60,8 @@ html, body {
      border-color: white;
      border-style: solid;
 }
+
+#div-embed #div-embed-header .div-close{
+	float: right;
+	cursor: pointer;
+}

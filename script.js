@@ -14,7 +14,7 @@ var config = {
     streamingAssetsUrl: "StreamingAssets",
     companyName: "RealityChain",
     productName: "2dverse: UniqueOne World",
-    productVersion: "0.9.4.M",
+    productVersion: "0.9-0208.0102",
 };
 container.setAttribute("isportrait", false);
 
@@ -86,7 +86,7 @@ function openTwitch(targetChannel, audioOnly) {
 
 function closeEmbed() {
     document.getElementById("div-embed").style.display = "none";
-    document.getElementById("div-embed").innerHTML = "<div id='div-embed-header'>Click here to move</div><div id='player'></div>";
+    document.getElementById("div-embed").innerHTML = "<div id='div-embed-header'><span>Click here to move</span><button class='div-close' type='button' onclick='closeEmbed()'>×</button></div><div id='player'></div>";
 }
 
 function openYoutube(targetChannel, audioOnly) {
@@ -106,13 +106,6 @@ function openYoutube(targetChannel, audioOnly) {
 		document.getElementById("div-embed").style.display = "block";
 		dragElement(document.getElementById("div-embed"));
 	}
-
-    /*
-	var el = document.createElement("div");
-    el.id = "youtube-embed";
-    el.innerHTML = "<iframe width='400' height='300' src='https://www.youtube.com/embed/live_stream?channel=" + targetChannel + "&autoplay=1&mute=1&enablejsapi=1' frameborder='0'></iframe>";
-    document.getElementById("div-embed").appendChild(el);
-    */
 }
 
 function onPlayerReady(event) {
