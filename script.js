@@ -14,7 +14,7 @@ var config = {
     streamingAssetsUrl: "StreamingAssets",
     companyName: "RealityChain",
     productName: "2dverse: UniqueOne World",
-    productVersion: "0.9.4.U",
+    productVersion: "0.9.6.U",
 };
 container.setAttribute("isportrait", false);
 
