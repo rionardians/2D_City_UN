@@ -8,13 +8,13 @@ var container = canvas.parentElement;
 var loadingBar = document.querySelector("#unity-loading");
 var loadingText = document.querySelector("#unity-loading-text");
 var config = {
-    dataUrl: "Build/Metamask.data",
-    frameworkUrl: "Build/Metamask.framework.js",
-    codeUrl: "Build/Metamask.wasm",
+    dataUrl: "Build/Near.data",
+    frameworkUrl: "Build/Near.framework.js",
+    codeUrl: "Build/Near.wasm",
     streamingAssetsUrl: "StreamingAssets",
     companyName: "RealityChain",
-    productName: "2dverse: UniqueOne World",
-    productVersion: "0.9.6.U",
+    productName: "2dverse: Near World",
+    productVersion: "0.9.7.DUAL",
 };
 container.setAttribute("isportrait", false);
 
